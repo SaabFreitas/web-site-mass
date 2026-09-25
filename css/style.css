@@ -1,8 +1,0 @@
-:root { --bg: #120a1e; --fg: #f0e6ff; }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #120a1e; --fg: #f0e6ff; } }
-:root[data-theme="dark"] { --bg: #120a1e; --fg: #f0e6ff; }
-html, body { height: 100%; margin: 0; }
-body { background: var(--bg); color: var(--fg); overflow: hidden; display: flex; align-items: center; justify-content: center;
-  font-family: 'Rajdhani', 'Segoe UI', sans-serif; }
-#wrap { width: min(100vw, calc(100vh * 16 / 9)); aspect-ratio: 16 / 9; max-width: 100%; }
-canvas { width: 100%; height: 100%; display: block; outline: none; box-shadow: 0 0 0 3px #0a0612, 0 0 60px rgba(255, 90, 120, .25); }
