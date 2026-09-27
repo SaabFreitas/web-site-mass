@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Portal do Avesso</title>
+<meta name="description" content="Jogo de plataforma com portais: o Agente Vulto atravessa o Mundo Normal e o Mundo Avesso para deter a invasão do Soberano Mil-Olhos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;500;600&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #05070b; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: var(--bg); overflow: hidden; touch-action: none; }
+  body { display: flex; align-items: center; justify-content: center; font-family: "Rajdhani", "Arial Narrow", sans-serif; }
+  #game { display: block; border-radius: 14px; box-shadow: 0 10px 40px rgba(0, 0, 0, .5); cursor: crosshair; image-rendering: auto; }
+  #touch { position: fixed; inset: 0; pointer-events: none; display: none; }
+  #touch.on { display: block; }
+  #touch .pad { position: absolute; bottom: 18px; display: flex; gap: 12px; pointer-events: auto; }
+  #touch .left { left: 16px; }
+  #touch .right { right: 16px; flex-wrap: wrap; justify-content: flex-end; width: 220px; }
+  #touch button {
+    width: 64px; height: 64px; border-radius: 50%; border: 3px solid rgba(255, 255, 255, .7);
+    background: rgba(10, 14, 20, .55); color: #fff; font: 700 15px "Rajdhani", sans-serif;
+    user-select: none; -webkit-user-select: none; touch-action: none;
+  }
+  #touch button.big { width: 76px; height: 76px; font-size: 26px; }
+  #touch button:active, #touch button.down { background: rgba(255, 255, 255, .35); }
+  #touch .top { position: absolute; top: 12px; right: 16px; pointer-events: auto; }
+  #touch .top button { width: 44px; height: 44px; font-size: 16px; }
+</style>
+</head>
+<body>
+<canvas id="game" width="960" height="540" aria-label="Portal do Avesso, jogo de plataforma"></canvas>
+<div id="touch" aria-hidden="true">
+  <div class="pad left">
+    <button class="big" data-act="left">◀</button>
+    <button class="big" data-act="right">▶</button>
+  </div>
+  <div class="pad right">
+    <button data-act="portal">PORTAL</button>
+    <button data-act="dash">DASH</button>
+    <button data-act="shoot">TIRO</button>
+    <button class="big" data-act="jump">▲</button>
+  </div>
+  <div class="top"><button data-act="pause">II</button></div>
+</div>
+<script src="game.js"></script>
+</body>
+</html>
