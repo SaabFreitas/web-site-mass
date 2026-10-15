@@ -12,6 +12,7 @@ npm install
 npm run dev      # servidor de desenvolvimento
 npm test         # testes da engine (Vitest)
 npm run build    # build de produção em dist/
+npm run build:arquivo  # gera ascensao.html: o jogo inteiro em um arquivo só, abre com dois cliques
 ```
 
 ## Arquitetura
